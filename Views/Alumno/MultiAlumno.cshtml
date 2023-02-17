@@ -1,0 +1,38 @@
+﻿
+@model List<Alumno>
+
+@{
+    ViewData["Title"] = "Información alumno";
+    Layout = "Simple";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a la escuela</h1>
+    <p>Espero que el vistazo por mi escuela te sea de agrado!</p>
+</div>
+<div>
+    <h1>@ViewData["title"]</h1>
+
+    <strong> Desde la vista parcial</strong>
+
+    <table class="Table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model)
+            {
+                <tr>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.UniqueId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    
+    <p><i>@ViewBag.Fecha </i></p>
+</div>
